@@ -1,0 +1,8 @@
+- name: 创建接收文件目录
+  shell: mkdir -p /data/install_mysql
+- name: 分发mysql安装包和install.sh脚本等
+  copy: src={{ item }} dest={{ source_dir }}
+  with_fileglob:
+    - /etc/ansible/roles/mysql_install/files/*
+- name: 分发mysql配置文件
+  template: src=my.cnf.j2 dest=/etc/my.cnf

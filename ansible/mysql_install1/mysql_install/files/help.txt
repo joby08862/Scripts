@@ -1,0 +1,12 @@
+mysqld --defaults-file=/etc/my.cnf --initialize-insecure --user=mysql
+mysqld --defaults-file=/etc/3308.cnf --initialize-insecure --user=mysql
+mysqld_multi --defaults-extra-file=/etc/my.cnf --log=/data/mysql_logs/mult.log stop/start/report 1-2
+
+root密码修改
+
+mysqladmin -uroot password 'Choose-Your-Password' -S /tmp/mysql3306.sock
+or
+mysqladmin -uroot password 'Choose-Your-Password' -P3306 -h127.0.0.1
+
+#修改密码防止过期
+alter user user() identified by "123456";

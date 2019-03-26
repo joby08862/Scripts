@@ -1,0 +1,4 @@
+mysql_version: mysql-5.7.23
+source_dir: /data/install_mysql
+install_dir: /data/mysql_bin
+data_dir: /data/mysql_data

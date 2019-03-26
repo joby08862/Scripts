@@ -1,0 +1,13 @@
+---
+- hosts: test
+  remote_user: root
+  gather_facts: True
+  
+  pre_tasks:
+    - shell: echo "start,please wait ......"
+
+  roles:
+    - zabbix-server
+
+  post_tasks:
+    - shell: echo " END, goodbye ! "
